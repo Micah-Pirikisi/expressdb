@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const path = require("path");
 
@@ -11,7 +12,7 @@ const userRoutes = require("./routes/userRoutes");
 app.use("/", userRoutes);
 
 // Start Server
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
