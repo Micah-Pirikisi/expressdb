@@ -29,6 +29,10 @@ async function createUsernameGet(req, res) {
 // POST /new → insert new username
 async function createUsernamePost(req, res) {
   try {
+    if (!username || username.trim() === "") {
+      return res.status(400).send("Username cannot be empty");
+    }
+
     const { username } = req.body;
     await db.insertUsername(username);
     res.redirect("/"); // go back to the homepage

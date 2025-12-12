@@ -6,7 +6,7 @@ async function getAllUsernames() {
 }
 
 async function searchUsernames(term) {
-  const res = await pool.query("SELECT * FROM users WHERE username ILIKE $1", [
+  const res = await pool.query("SELECT * FROM usernames WHERE username ILIKE $1", [
     `%${term}%`,
   ]);
   return res.rows;
@@ -17,7 +17,7 @@ async function insertUsername(username) {
 }
 
 async function deleteAllUsernames() {
-  await pool.query("DELETE FROM users");
+  await pool.query("DELETE FROM usernames");
 }
 
 module.exports = {
