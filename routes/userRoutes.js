@@ -11,4 +11,7 @@ router.get("/new", userController.createUsernameGet);
 // POST /new
 router.post("/new", userController.createUsernamePost);
 
+// GET /delete 
+router.get("/delete", userController.deleteAllUsernames);
+
 module.exports = router;
