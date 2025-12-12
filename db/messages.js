@@ -1,4 +1,4 @@
-const pool = require("./index");
+const pool = require("./pool");
 
 // Get all messages
 async function getAllMessages() {
